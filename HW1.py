@@ -6,8 +6,7 @@
 
 ## List below here, in a comment/comments, the people you worked with on this assignment AND any resources you used to find code (50 point deduction for not doing so). If none, write "None".
 ## Michele Gee
-
-##
+## Resources: I used the readings from the assigned homework, as well as a youtube video https://www.youtube.com/watch?v=v5TIu67oTWg
 import requests
 import json
 from datetime import datetime as dt
@@ -116,10 +115,9 @@ def double():
 # You can assume that a user will give you the type of input/response you expect in your form; you do not need to handle errors or user confusion. (e.g. if your form asks for a name, you can assume a user will type a reasonable name; if your form asks for a number, you can assume a user will type a reasonable number; if your form asks the user to select a checkbox, you can assume they will do that.)
 
 # Points will be assigned for each specification in the problem.
-    # Month
-    # <input type = "text" name = " Month " value = "0" <br><br>
-    # Day
-    # <input type = "text" name = "Day" value = "0" <br><br>
+
+
+#User will enter their name, and then select their astrology sign. Once they click submit they will recieve their daily horoscope. 
 
 @app.route('/horoscope', methods = ['POST', 'GET'])
 def assign():
