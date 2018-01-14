@@ -64,31 +64,30 @@ def mov(name):
 ## Once you enter a number and submit it to the form, you should then see a web page that says "Double your favorite number is <number>". For example, if you enter 2 into the form, you should then see a page that says "Double your favorite number is 4". Careful about types in your Python code!
 ## You can assume a user will always enter a number only.
 
-@app.route('/question', methods = ['POST', 'GET'])
-def favorite():
-    i = """<DOCTYPE html>
+@app.route('/question')
+def entry():
+    m = """<DOCTYPE html>
 <html>
 <body>
-<form action = "/result" method = "GET">
 <div>
+<form action = "/result" method = "GET">
     Enter your Favorite Number:
     <input type= "text" name = "number" value = "0">
     <br> <br>
     <input type = "submit" value = "Submit"
-</div>
+<div>
 </form>
 </htm>
 """
-    return i
+    return m
 
 
 @app.route('/result', methods= ['POST', 'GET'])
-def doubled_num():
+def double():
     if request.method == 'GET':
-        double = request.args
-        favorite = double.get('number')
-        multiply = 2 * (int(favorite))
-        return "Double your favorite number is {}".format(multiply)
+        number = request.args.get('number', '')
+        num = int(number)
+        return "Double your favorite number is: " + str(num*2)
 
 #@app.route('/result', methods= ['POST', 'GET'])
 #def doubled():
